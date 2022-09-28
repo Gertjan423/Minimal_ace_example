@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Ace } from 'ace-builds/ace.d';
 import * as ace from "ace-builds";
 import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-chrome';
@@ -12,6 +13,8 @@ export class AppComponent {
   title = 'minimal';
   text = 'some text and some more text';
 
+  private editor : Ace.Editor | null = null
+
   @ViewChild('codeboxId')
   private codebox!: ElementRef<HTMLElement>;
 
@@ -20,10 +23,10 @@ export class AppComponent {
     var langTools = ace.require("ace/ext/language_tools");
 
     // initialize code editor
-    const codeEditor = ace.edit(this.codebox.nativeElement);
-    codeEditor.session.setMode("ace/mode/python");
-    codeEditor.setTheme("ace/theme/chrome");
-    codeEditor.setValue(this.text);
-    codeEditor.selection.clearSelection();
+    this.editor = ace.edit(this.codebox.nativeElement);
+    this.editor.session.setMode("ace/mode/python");
+    this.editor.setTheme("ace/theme/chrome");
+    this.editor.setValue(this.text);
+    this.editor.selection.clearSelection();
   }
 }

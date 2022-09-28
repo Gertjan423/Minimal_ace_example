@@ -1,0 +1,14 @@
+.code-row {
+  border: 1px solid #304169;
+  border-radius: 5px;
+  opacity: 1;
+  padding: 10px;
+  margin: 5px 5px 5px 5px;
+}
+
+.code-box {
+  grid-area: code;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  height: 50px;
+}
