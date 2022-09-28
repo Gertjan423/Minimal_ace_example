@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+/* For ACE editor */
+@font-face{
+  font-family: 'JetBrains Mono';
+  src: url('/assets/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ace_content * {
+  font-family: 'JetBrains Mono';
+}
